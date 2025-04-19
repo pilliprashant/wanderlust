@@ -1,0 +1,86 @@
+<% layout('layouts/boilerplate') -%>
+<body>
+    <div class="row mt-3">
+        <div class="col-8 offset-2">
+            <br><br>
+    <h3>Create a new Listing</h3>
+    <form method="post" action="/listings" class="needs-validation" novalidate enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input name="listing[title]" type="text" placeholder="enter the title" class="form-control" required>
+            <div class="valid-feedback">Title looks good!</div>
+            
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="listing[description]" type="text" class="form-control" required></textarea>
+            <div class="invalid-feedback">please enter a short description</div>
+        </div>
+     
+       
+      </div> -->
+      <div class="mb-3">
+        <label for="image" class="form-label">Upload Listing Image</label>
+        <input name="listing[image]" type="file" class="form-control" required>
+       
+      </div>
+      <div class="row">
+        <div class="mb-3 col-md-4">
+            <label for="price" class="form-label">Price</label>
+            <input name="listing[price]" type="number" placeholder="enter the price" class="form-control" required>
+            <div class="invalid-feedback">please enter a valid price</div>
+        </div>
+        <div class="mb-3 col-md-8">
+            <label for="country" class="form-label">Country</label>
+            <input name="listing[country]" type="text" placeholder="enter the country" class="form-control" required>
+            <div class="invalid-feedback">please enter the country</div>
+        </div>
+      </div>
+    
+    <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input name="listing[location]" type="text" placeholder="enter the location" class="form-control" required>
+        <div class="invalid-feedback">please enter the location</div>
+    </div>
+    <div class="mb-3 col-8">
+      <label for="category">Category</label>
+      <div class="dropdown">
+        <button id="categoryDropdown" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+           Select category
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#" data-value="Trending">Trending</a></li>
+          <li><a class="dropdown-item" href="#" data-value="Rooms">Rooms</a></li>
+          <li><a class="dropdown-item" href="#" data-value="Iconic Cities">Iconic Cities</a></li>
+          <li><a class="dropdown-item" href="#" data-value="Mountains">Mountains</a></li>
+          <li><a class="dropdown-item" href="#" data-value="Castle">Castle</a></li>
+          <li><a class="dropdown-item" href="#" data-value="Amazing Pools">Amazing Pools</a></li>
+          <li><a class="dropdown-item" href="#" data-value="Camping">Camping</a></li>
+          <li><a class="dropdown-item" href="#" data-value="Farms">Farms</a></li>
+          <li><a class="dropdown-item" href="#" data-value="Arctic">Arctic</a></li>
+          <li><a class="dropdown-item" href="#" data-value="Domes">Domes</a></li>
+          <li><a class="dropdown-item" href="#" data-value="Boats">Boats</a></li>
+        </ul>
+      </div>
+      <input type="hidden" name="listing[category]" id="categoryInput">
+    </div>
+    
+    
+    
+    <button class="btn btn-dark add-btn mt-3">Add</button>
+    <br><br>
+    </form>
+    <script>
+      document.querySelectorAll('.dropdown-item').forEach(item => {
+        item.addEventListener('click', function(e) {
+          e.preventDefault();  // prevent link behavior
+          const value = this.getAttribute('data-value');
+          document.getElementById('categoryDropdown').textContent = value;
+          document.getElementById('categoryInput').value = value;
+        });
+      });
+    </script>
+    
+</body>
+</div>
+</div>
