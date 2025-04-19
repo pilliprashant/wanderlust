@@ -5,14 +5,54 @@
  
 </script>
 <style>
-   @media (max-width: 768px) {
+  /* Small screen adjustments only */
+  @media (max-width: 768px) {
     .reviews {
       width: 100%;
-      margin-left: 0; /* Ensure it doesn't overflow */
-      margin-top: 1rem;
+      margin: 1rem 0;
+    }
+
+    .show-card {
+      width: 100% !important;
+      margin: 1rem 0 !important;
+    }
+
+    .edit-btn,
+    .btns form button {
+      width: 100%;
+      margin: 0.5rem 0;
+    }
+
+    .col-8.offset-3,
+    .col-6.offset-3 {
+      width: 100%;
+      margin: 0;
+    }
+
+    #map {
+      height: 250px;
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .row.mt-3 {
+      margin-top: 1rem !important;
+    }
+
+    .card-img-top.show-img {
+      max-height: 300px;
+      object-fit: cover;
     }
   }
+
+  /* Map default size for larger screens */
+  #map {
+    height: 400px;
+    width: 100%;
+    border-radius: 8px;
+  }
 </style>
+
 <body>
     <div class="row mt-3">
         <div class="col-8 offset-3">
